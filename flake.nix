@@ -11,6 +11,8 @@
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
 	rustVersion = pkgs.rust-bin.stable.latest.default;
+	# placeholder to set specific version of rust toolchain
+	# = (pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml);
       in {
         devShell = pkgs.mkShell {
 	  buildInputs =
